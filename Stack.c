@@ -332,54 +332,172 @@
 //	return elem;
 // }
 
-#include <stdio.h>
-#define SIZE 5
+// #include <stdio.h>
+// #define SIZE 5
 
-int s[SIZE], top = -1;
+// int s[SIZE], top = -1;
 
-int isFull()
-{
-    int len = sizeof(s) - 1;
-    if (top == len)
-        return 1;
-    return 0;
-}
+// int isFull()
+// {
+//     int len = sizeof(s) - 1;
+//     if (top == len)
+//         return 1;
+//     return 0;
+// }
 
-void push(int elem)
-{
-    if (isFull(s, top))
-        printf("OVERFLOW!!");
-    else
-    {
-        top++;
-        s[top] = elem;
-    }
-}
+// void push(int elem)
+// {
+//     if (isFull(s, top))
+//         printf("OVERFLOW!!");
+//     else
+//     {
+//         top++;
+//         s[top] = elem;
+//     }
+// }
 
-void displayStack()
-{
-    for (int i = 0; i <= top; i++)
-        printf("%d\n", s[i]);
-    printf("^Top");
-}
+// void displayStack()
+// {
+//     for (int i = 0; i <= top; i++)
+//         printf("%d\n", s[i]);
+//     printf("^Top");
+// }
 
-int pop()
-{
-    int elem = s[top];
-    top--;
-    return elem;
-}
+// int pop()
+// {
+//     int elem = s[top];
+//     top--;
+//     return elem;
+// }
 
-int main()
-{
-    push(5);
-    push(6);
-    push(8);
-    push(7);
-    push(3);
-    displayStack();
-    printf("\n\n\nPop: %d", pop());
-    printf("\n\n");
-    displayStack();
-    return 0;
-}
+// int main()
+// {
+//     push(5);
+//     push(6);
+//     push(8);
+//     push(7);
+//     push(3);
+//     displayStack();
+//     printf("\n\n\nPop: %d", pop());
+//     printf("\n\n");
+//     displayStack();
+//     return 0;
+// }
+
+// convert infix to postfix notation
+
+// #include <stdio.h>
+// #include <ctype.h>
+
+// char stack[100];
+// int top = -1;
+
+// void push(char x)
+// {
+//     stack[++top] = x;
+// }
+
+// char pop()
+// {
+//     if (top == -1)
+//         return -1;
+//     else
+//         return stack[top--];
+// }
+// int priority(char x)
+// {
+//     if (x == '(')
+//         return 0;
+//     if (x == '+' || x == '-')
+//         return 1;
+//     if (x == '*' || x == '/')
+//         return 2;
+//     return 0;
+// }
+
+// int main()
+// {
+//     char exp[100];
+//     char *e, x;
+//     printf("Enter the expression: ");
+//     scanf("%s", exp);
+//     printf("\n");
+//     e = exp;
+//     while (*e != '\0')
+//     {
+//         if (isalnum(*e))
+//             printf("%c ", *e);
+//         else if (*e == '(')
+//             push(*e);
+//         else if (*e == ')')
+//         {
+//             while ((x = pop()) != '(')
+//                 printf("%c ", x);
+//         }
+//         else
+//         {
+//             while (priority(stack[top]) >= priority(*e))
+//                 printf("%c ", pop());
+//             push(*e);
+//         }
+//         e++;
+//     }
+//     while (top != -1)
+//         printf("%c ", pop());
+//     return 0;
+// }
+
+// #include <stdio.h>
+// #include <ctype.h>
+
+// int stack[100], top = -1;
+
+// void push(char x)
+// {
+//     stack[++top] = x;
+// }
+
+// char pop()
+// {
+//     return stack[top--];
+// }
+
+// int prijoritet(char x)
+// {
+//     if (x == '(')
+//         return 0;
+//     if (x == '+' || x == '-')
+//         return 1;
+//     if (x == '*' || x == '/')
+//         return 2;
+//     return 0;
+// }
+
+// int main()
+// {
+//     char exp[100];
+//     char *e, x;
+//     printf("Enter an expression: ");
+//     scanf("%s", exp);
+//     e = exp;
+//     while (*e != '\0')
+//     {
+//         if (isalnum(*e))
+//             printf("%c ", *e);
+//         else if (*e == '(')
+//             push(*e);
+//         else if (*e == ')')
+//             while ((x = pop()) != '(')
+//                 printf("%c ", x);
+//         else
+//         {
+//             while (prijoritet(stack[top]) >= prijoritet(*e))
+//                 printf("%c ", pop());
+//             push(*e);
+//         }
+//         e++;
+//     }
+//     while (top != -1)
+//         printf("%c ", pop());
+//     return 0;
+// }
